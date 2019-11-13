@@ -1,6 +1,6 @@
 # Using Social Media to Predict Power Outages
-### _Authors_: Peter Garcia, Raffy Santayana, Ambar Kleinbort
----
+_Authors_: Peter Garcia, Raffy Santayana, Ambar Kleinbort
+
 
 ## Problem Statement
 The aftermath of Hurricane Sandy led to over [8 million US people without power](https://www.huffpost.com/entry/hurricane-sandy-power-outage-map-infographic_n_2044411). According to [energy.gov](https://www.energy.gov/articles/hurricane-sandy-noreaster-situation-reports), everyone who was able to recieve electricity after the storm has had their electricity restored by December 3, leaving a remainder of 26,000 people in New York and New Jersey without power. One of the methods of detecting power outages at this time was by utilizing [smart meters and Advanced Meter Infrastructures (AMI)](https://openei.org/wiki/Definition:Outage_Detection/Reporting). The problem is that these systems [will not be fully implemented until 2030](http://people.stern.nyu.edu/kbauman/research/papers/2015_KBauman_WITS.pdf) due to high cost of production. As an alternative method of detecting these outages, we will be using natural language processsing techniques such as web embedding to analyze various posts from a social media platform, Twitter. When analyzing these posts, we hope to classify each post as either a post pertaining to a blackout or a post not pertaining to a blackout using supervised classification.
