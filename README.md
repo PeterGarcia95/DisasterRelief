@@ -1,5 +1,5 @@
 # Using Social Media to Predict Power Outages
-###_Authors_: Peter Garcia, Raffy Santayana, Ambar Kleinbort
+### _Authors_: Peter Garcia, Raffy Santayana, Ambar Kleinbort
 ---
 
 ## Problem Statement
