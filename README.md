@@ -20,15 +20,10 @@ Once the Twitter data is gathered, we will use [data from the Department of Ener
 With all the labeled Tweets in hand, we are then able to clean the text of the Tweets by removing superficial tokens that may come from HTML links or otherwise to then be able to apply `CountVectorizer` to get the frequency of each token in their respective document, or Tweet. Thus, we will pipeline and GridSearch in order to tune hyperparameters. We will then look at various evaluation metrics such as the ROC AUC.
 
 ## Conclusions, Recommendations, and Limitations
-**Explain Why We Used Logistic Regression and CountVectorizer For Final Results**
-
-**Discuss the Evaluation Metrics Used and ROC AUC**
+We focused on assessing whether or not a specific tweet signaled a blackout, using a logistic regression to make our classification. At the default 50% predicted-probability threshold, the accuracy was 84% (baseline=77%). At this point, recall was 75% and precision 98%. We would suggest given a greater priority to recall, since prioritizing helping all those who need it at the risk of having some false alarms might often be best. At the 70% threshold, recall goes up to 92%. There is a wide range of thresholds in between, as seen on the ROC curve. 
 
 Since the the Twitter data was scraped using a third party Python library and not the Twitter API, we were unnable to get reliable geolocation information, if any. Due to this, we needed to populate simulated location values for each Tweet. When visualizing the location of Tweets that were posted during blackouts and those that were not, we expect to see clusters of neighborhoods that were affected, but did not occur due to the randomly assigned location values.
 
 Adding on to the lack of reliable location data, we were not able to be completely certain that the Tweets we have gathered truly originated from Massachussets. For example, while querying for Tweets, we needed to specify to not scrape Tweets that originated from or mentioned @KenyaPower_Care. Obviously, those in Massachusets do not recieve energy from Kenya, but it is apparent that twitterscraper's query function is not perfect when using the `near` and `within` parameters.
 
-We focused on assessing whether or not a specific tweet signaled a blackout, using a logistic regression to make our classification. At the default 50% predicted-probability threshold, the accuracy was 84% (baseline=77%). At this point, recall was 75% and precision 98%. We would suggest given a greater priority to recall, since prioritizing helping all those who need it at the risk of having some false alarms might often be best. At the 70% threshold, recall goes up to 92%. There is a wide range of thresholds in between, as seen on the ROC curve. 
-
 In the future, we would recommend expanding the model to include more languages. This wouldn’t just improve accuracy and recall, it would make sure we reach more communities that may not be able to communicate in English. With the twitter API, we could also make a map of our predictions in an app that updates live.
-
