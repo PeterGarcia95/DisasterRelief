@@ -1,5 +1,5 @@
 # Using Social Media to Predict Power Outages
-_Authors_: Peter Garcia, Raffy Santayana, Ambar Kleinbort
+###_Authors_: Peter Garcia, Raffy Santayana, Ambar Kleinbort
 ---
 
 ## Problem Statement
@@ -13,3 +13,17 @@ The aftermath of Hurricane Sandy led to over [8 million US people without power]
 5. [Mapping Boston Tweets](https://github.com/PeterGarcia95/DisasterRelief/blob/master/code/04-%20Mapping%20Boston%20Tweets%20.ipynb)
 
 ## Executive Summary
+In order to get Tweets from Twitter to perform natural language processing analysis, we will be utilizing a Python library called [twitterscraper](https://github.com/taspinar/twitterscraper). With this library, we are able to establish keywords to search for that we expect to be within the text of the Tweet, keywords we do not want within the text of the Tweet, the general area we would like the origin of the Tweets to be, and the range of distance we would like to limit the Tweets to be from. Due to the large amount of Tweets posted within the USA, we will be limiting our Tweets to originate from the center of Boston, MA within a radius of 75 kilometers.
+
+Once the Twitter data is gathered, we will use [data from the Department of Energy](https://www.oe.netl.doe.gov/OE417_annual_summary.aspx) to determine which Tweets were posted during actual blackouts. This way, we are able to use supervised classification models such as logistic regression and k-Nearest Neighbors. Since we are limiting our Tweets to originate from the general Boston area, we are also able to determine which blackouts affected Massachusets.
+
+With all the labeled Tweets in hand, we are then able to clean the text of the Tweets by removing superficial tokens that may come from HTML links or otherwise to then be able to apply `CountVectorizer` to get the frequency of each token in their respective document, or Tweet. Thus, we will pipeline and GridSearch in order to tune hyperparameters. We will then look at various evaluation metrics such as the ROC AUC.
+
+## Conclusions, Recommendations, and Limitations
+**Explain Why We Used Logistic Regression and CountVectorizer For Final Results**
+
+**Discuss the Evaluation Metrics Used and ROC AUC**
+
+Since the the Twitter data was scraped using a third party Python library and not the Twitter API, we were unnable to get reliable geolocation information, if any. Due to this, we needed to populate simulated location values for each Tweet. When visualizing the location of Tweets that were posted during blackouts and those that were not, we expect to see clusters of neighborhoods that were affected, but did not occur due to the randomly assigned location values.
+
+Adding on to the lack of reliable location data, we were not able to be completely certain that the Tweets we have gathered truly originated from Massachussets. For example, while querying for Tweets, we needed to specify to not scrape Tweets that originated from or mentioned @KenyaPower_Care. Obviously, those in Massachusets do not recieve energy from Kenya, but it is apparent that twitterscraper's query function is not perfect when using the `near` and `within` parameters.
