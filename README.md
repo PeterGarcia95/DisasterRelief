@@ -7,7 +7,7 @@ The aftermath of Hurricane Sandy led to over [8 million US people without power]
 
 ## Project Files
 1. [Scraping Twitter for Tweets](https://github.com/PeterGarcia95/DisasterRelief/blob/master/code/00%20-%20Scraping%20Twitter%20for%20Data.ipynb)
-2. [Identifying Known Blackouts in Mass](hhttps://github.com/PeterGarcia95/DisasterRelief/blob/master/code/01-%20Identifying%20Known%20Blackouts%20in%20Mass.ipynb)
+2. [Identifying Known Blackouts in Mass](https://github.com/PeterGarcia95/DisasterRelief/blob/master/code/01-%20Identifying%20Known%20Blackouts%20in%20Mass.ipynb)
 3. [Tweet Cleaning](https://github.com/PeterGarcia95/DisasterRelief/blob/master/code/02-Tweet%20Cleaning.ipynb)
 4. [NLP and Model Evaluation](https://github.com/PeterGarcia95/DisasterRelief/blob/master/code/03-NLP%20and%20Model%20Evaluation.ipynb)
 5. [Mapping Boston Tweets](https://github.com/PeterGarcia95/DisasterRelief/blob/master/code/03-NLP%20and%20Model%20Evaluation.ipynb)
